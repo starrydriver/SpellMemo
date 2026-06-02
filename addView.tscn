@@ -1,0 +1,138 @@
+[gd_scene load_steps=9 format=3 uid="uid://mst7cht4sgbx"]
+
+[ext_resource type="Script" uid="uid://cd2mir4rik2j4" path="res://AddView.cs" id="1_kdgut"]
+[ext_resource type="FontFile" uid="uid://daeelx3farlmv" path="res://LXGWWenKai-Medium.ttf" id="2_56erv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+bg_color = Color(0.699653, 0.699654, 0.699653, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.270222, 0.270222, 0.270222, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
+font_size = 25
+font_color = Color(0.314316, 0.314316, 0.314316, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(0.054902, 0.054902, 0.054902, 0.54902)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0.054902, 0.054902, 0.054902, 0.54902)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0.054902, 0.054902, 0.054902, 0.54902)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="addView" type="Panel"]
+offset_right = 500.0
+offset_bottom = 500.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ig7tw")
+script = ExtResource("1_kdgut")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_right = 450.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("2_56erv")
+text = "添加单词"
+label_settings = SubResource("LabelSettings_h2yge")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="status" type="Label" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 310.0
+offset_right = 450.0
+offset_bottom = 410.0
+theme_override_fonts/font = ExtResource("2_56erv")
+text = "✅❌确认后显示添加状况
+"
+label_settings = SubResource("LabelSettings_0xm2m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="input_vocabulary" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 80.0
+offset_right = 450.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("2_56erv")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xm2m")
+placeholder_text = "词汇名称"
+alignment = 1
+
+[node name="input_pos" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 160.0
+offset_right = 450.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("2_56erv")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xm2m")
+placeholder_text = "词性"
+alignment = 1
+
+[node name="input_spell" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 240.0
+offset_right = 450.0
+offset_bottom = 320.0
+theme_override_fonts/font = ExtResource("2_56erv")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xm2m")
+placeholder_text = "拼写"
+alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 400.0
+offset_right = 450.0
+offset_bottom = 460.0
+theme_override_fonts/font = ExtResource("2_56erv")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
+text = "Add"

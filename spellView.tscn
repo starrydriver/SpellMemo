@@ -1,0 +1,130 @@
+[gd_scene load_steps=11 format=3 uid="uid://sr4bbcned34"]
+
+[ext_resource type="Script" uid="uid://dvu1vrmenrjk4" path="res://Input.cs" id="1_461tj"]
+[ext_resource type="Script" uid="uid://ckbk6nafcbbnu" path="res://SpellView.cs" id="1_se8au"]
+[ext_resource type="FontFile" uid="uid://daeelx3farlmv" path="res://LXGWWenKai-Medium.ttf" id="2_roe0r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+bg_color = Color(0.699653, 0.699654, 0.699653, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.270222, 0.270222, 0.270222, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_7dm0k"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ig7tw"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
+font_size = 25
+font_color = Color(0.314316, 0.314316, 0.314316, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(0.054902, 0.054902, 0.054902, 0.54902)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0.054902, 0.054902, 0.054902, 0.54902)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0.054902, 0.054902, 0.054902, 0.54902)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="spellView" type="Panel"]
+offset_right = 500.0
+offset_bottom = 500.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ig7tw")
+script = ExtResource("1_se8au")
+
+[node name="vocabulary" type="Label" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 150.0
+theme_override_fonts/font = ExtResource("2_roe0r")
+text = "单词备忘录"
+label_settings = SubResource("LabelSettings_7dm0k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="posTagging" type="Label" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 450.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("2_roe0r")
+text = "（词性）"
+label_settings = SubResource("LabelSettings_ig7tw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="status" type="Label" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 310.0
+offset_right = 450.0
+offset_bottom = 410.0
+theme_override_fonts/font = ExtResource("2_roe0r")
+text = "✅❌确认后显示正确答案"
+label_settings = SubResource("LabelSettings_0xm2m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="input" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 225.0
+offset_right = 450.0
+offset_bottom = 325.0
+theme_override_fonts/font = ExtResource("2_roe0r")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xm2m")
+placeholder_text = "input here"
+alignment = 1
+script = ExtResource("1_461tj")
+
+[node name="submitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 400.0
+offset_right = 450.0
+offset_bottom = 460.0
+theme_override_fonts/font = ExtResource("2_roe0r")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
+text = "Submit"

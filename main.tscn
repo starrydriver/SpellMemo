@@ -1,0 +1,109 @@
+[gd_scene load_steps=10 format=3 uid="uid://bbnxs2lwp72uu"]
+
+[ext_resource type="PackedScene" uid="uid://mst7cht4sgbx" path="res://addView.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://sr4bbcned34" path="res://spellView.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://chwpi3vb4ou8o" path="res://AddButton.cs" id="3_1bvp3"]
+[ext_resource type="FontFile" uid="uid://daeelx3farlmv" path="res://LXGWWenKai-Medium.ttf" id="3_lquwl"]
+[ext_resource type="Script" uid="uid://cf5iqd13xidoj" path="res://SpellButton.cs" id="4_lquwl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dm0k"]
+bg_color = Color(0.94852, 0.945801, 0.998465, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(0.699653, 0.699654, 0.699653, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.270222, 0.270222, 0.270222, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0.054902, 0.054902, 0.054902, 0.54902)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0.054902, 0.054902, 0.054902, 0.54902)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
+
+[node name="addView" parent="." instance=ExtResource("1_0xm2m")]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 550.0
+offset_bottom = 550.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0xm2m")
+
+[node name="spellView" parent="." instance=ExtResource("1_ig7tw")]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 550.0
+offset_bottom = 550.0
+
+[node name="addButton" type="Button" parent="." node_paths=PackedStringArray("addView", "spellView")]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 60.0
+offset_right = 775.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("3_lquwl")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
+text = "Add"
+script = ExtResource("3_1bvp3")
+addView = NodePath("../addView")
+spellView = NodePath("../spellView")
+
+[node name="spellButton" type="Button" parent="." node_paths=PackedStringArray("addView", "spellView")]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 130.0
+offset_right = 775.0
+offset_bottom = 190.0
+theme_override_fonts/font = ExtResource("3_lquwl")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
+text = "Spell
+"
+script = ExtResource("4_lquwl")
+addView = NodePath("../addView")
+spellView = NodePath("../spellView")
