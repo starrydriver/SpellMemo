@@ -1,6 +1,9 @@
 # Godot 4+ specific ignores
 .godot/
-*.uid
+*.ttf
+*.ttf.*
+
+*.cs.uid
 # Godot-specific ignores
 export_presets.cfg
 export.cfg
@@ -74,3 +77,4 @@ nuget.config
 *.orig
 *.tmp
 *~
+*.cs.uid
